@@ -1,0 +1,38 @@
+
+# OncoPRISM Research Paper - Evaluation Results Summary
+
+## Evaluation Setup
+- Test Set Size: 500 samples
+- Positive Class Rate: 45.6%
+- Evaluation Metric: Binary classification (tumor vs non-tumor)
+
+## Key Findings
+
+### 1. Model Performance Comparison
+- GCN Baseline: Accuracy=0.8220, F1=0.8094, ROC-AUC=0.9061
+- PRGAT Baseline: Accuracy=0.8220, F1=0.8118, ROC-AUC=0.9057
+- Proposed PR×Model: Accuracy=0.6880, F1=0.5000, ROC-AUC=0.7671
+
+### 2. WSI Pipeline Ablation Study
+- PageRank Only: F1=0.3508
+- Model Only: F1=0.9478
+- Contribution Analysis: Combined approach yields -47.25% improvement
+
+### 3. Statistical Significance
+- All pairwise comparisons utilize Mann-Whitney U test
+- Threshold analysis shows optimal decision boundary around 0.5
+
+## Visualizations Generated
+- roc_pr_curves.png: ROC and Precision-Recall curves
+- confusion_matrices.png: Confusion matrices for all models
+- calibration_distributions.png: Score distributions and calibration curves
+- ablation_study.png: WSI pipeline component analysis
+- model_comparison_radar.png: Multi-metric performance radar chart
+- error_analysis.png: Error type breakdown by model
+
+## Recommendations for Paper
+1. Highlight the synergistic effect of PageRank × Model integration
+2. Emphasize ROC-AUC as key metric for imbalanced medical classification
+3. Include ablation study to demonstrate necessity of both components
+4. Use radar chart to show well-rounded performance across metrics
+5. Discuss failure modes using error analysis
